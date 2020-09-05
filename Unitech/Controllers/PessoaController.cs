@@ -42,7 +42,7 @@ namespace Unitech.Controllers
                 Text = "Selecione",
                 Value = ""
             });
-                foreach(var linha in _pessoaRep.ListarOngId())
+                foreach(var linha in _ongRep.ListarOng())
             {
                 lista.Add(new SelectListItem()
                 {
