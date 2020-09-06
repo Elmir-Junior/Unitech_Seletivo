@@ -1,8 +1,10 @@
-﻿@{
+﻿
+@{
     ViewData["Title"] = "Home Page";
+    Unitech.Infra.OngRepository ongPartial = new Unitech.Infra.OngRepository();
+    //Unitech.Infra.PessoaRepository pessoaPartial = new Unitech.Infra.PessoaRepository();
+
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<div style="margin: 5px; align-items: center"><p>@Html.Partial("ongPartial.cshtml", ongPartial.ListarOng())</p></div>
+<!-- <div float: left; width: 50%;><p>Html.Partial("pessoaPartial.cshtml", pessoaPartial.ListarPessoa())</p></divfloat:> -->

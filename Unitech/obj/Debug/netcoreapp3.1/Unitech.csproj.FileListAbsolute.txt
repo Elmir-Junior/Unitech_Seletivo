@@ -121,8 +121,6 @@ C:\Users\elmir\source\repos\Unitech\Unitech\bin\Debug\netcoreapp3.1\ru\Microsoft
 C:\Users\elmir\source\repos\Unitech\Unitech\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\elmir\source\repos\Unitech\Unitech\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\elmir\source\repos\Unitech\Unitech\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\elmir\source\repos\Unitech\Unitech\obj\Debug\netcoreapp3.1\Unitech.csproj.CoreCompileInputs.cache
-C:\Users\elmir\source\repos\Unitech\Unitech\obj\Debug\netcoreapp3.1\Unitech.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\elmir\source\repos\Unitech\Unitech\obj\Debug\netcoreapp3.1\Razor\Views\Teste\Index.cshtml.g.cs
 C:\Users\elmir\source\repos\Unitech\Unitech\obj\Debug\netcoreapp3.1\Razor\Views\Teste\Details.cshtml.g.cs
 C:\Users\elmir\source\repos\Unitech\Unitech\obj\Debug\netcoreapp3.1\Razor\Views\Teste\Create.cshtml.g.cs
@@ -138,3 +136,5 @@ C:\Users\elmir\source\repos\Unitech\Unitech\obj\Debug\netcoreapp3.1\Razor\Views\
 C:\Users\elmir\source\repos\Unitech\Unitech\obj\Debug\netcoreapp3.1\Razor\Views\Ong\Edit.cshtml.g.cs
 C:\Users\elmir\source\repos\Unitech\Unitech\obj\Debug\netcoreapp3.1\Razor\Views\Ong\Delete.cshtml.g.cs
 C:\Users\elmir\source\repos\Unitech\Unitech\obj\Debug\netcoreapp3.1\Razor\Views\Pessoa\Create.cshtml.g.cs
+C:\Users\elmir\source\repos\Unitech\Unitech\obj\Debug\netcoreapp3.1\Razor\Views\Home\ongPartial.cshtml.g.cs
+C:\Users\elmir\source\repos\Unitech\Unitech\obj\Debug\netcoreapp3.1\Razor\Views\Home\pessoaPartial.cshtml.g.cs
