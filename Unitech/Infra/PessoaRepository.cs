@@ -27,7 +27,7 @@ namespace Unitech.Infra
         {
             using (var con = mySQL.connection())
             {
-                var query = "update pessoa set Descricao=@Descricao, Telefone=@Telefone, Ong_ID=@Ong_ID where = ID=@ID ";
+                var query = "update pessoa set Descricao=@Descricao, Telefone=@Telefone, Ong_ID=@Ong_ID where ID=@ID ";
                 con.Execute(query, new { item.Descricao, item.ID, item.Telefone, item.Ong_ID });
             }
         }
@@ -40,24 +40,6 @@ namespace Unitech.Infra
                 return con.QueryFirstOrDefault<Pessoa>(query, new { ID = id });
             }
         }
-
-        public Pessoa buscarporong(int id)
-        {
-            using (var con = mySQL.connection())
-            {
-                string query = "Select * from pessoa where ong_id=@ong_id";
-                return con.QueryFirstOrDefault<Pessoa>(query, new { ong_id = id });
-            }
-        }
-        public IEnumerable<Ong> ListarOngId(){
-
-            using (var con = mySQL.connection())
-            {
-                var query = "select id from ong";
-                return con.Query<Ong>(query);
-            }
-
-            }
 
         public IEnumerable<Pessoa> ListarPessoa()
         {

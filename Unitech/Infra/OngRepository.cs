@@ -23,7 +23,7 @@ namespace Unitech.Infra
         {
             using (var con = mySQL.connection())
             {
-                var query = "update ong set Descricao=@Descricao where = ID=@ID ";
+                var query = "update ong set Descricao=@Descricao where ID=@ID ";
                 con.Execute(query, new { item.Descricao, item.ID });
             }
         }

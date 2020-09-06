@@ -8,7 +8,7 @@
 
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Create" data-ajax="true" data-ajax-mode="replace" data-ajax-update="#conteudo">
             <div class="form-group">
                 <label asp-for="Descricao" class="control-label"></label>
                 <input asp-for="Descricao" class="form-control" />
@@ -22,7 +22,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Voltar</a>
+    <a asp-action="Index"  data-ajax="true" data-ajax-mode="replace" data-ajax-update="#conteudo">Voltar</a>
 </div>
 
 @section Scripts {

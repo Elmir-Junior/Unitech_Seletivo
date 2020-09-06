@@ -9,25 +9,25 @@ using Unitech.Models;
 
 namespace Unitech.Controllers
 {
-    public class OngController : Controller
+    public class OngController : BaseController
     {
         OngRepository _ongRep = new OngRepository();
 
         public ActionResult Index()
         {
-            return View(_ongRep.ListarOng());
+                return View(_ongRep.ListarOng());   
         }
 
         
         public ActionResult Details(int id)
         {
-            return View(_ongRep.BuscarporId(id));
+                return View(_ongRep.BuscarporId(id));
         }
 
         
         public ActionResult Create()
         {
-            return View();
+                return View();
         }
 
         
@@ -49,7 +49,7 @@ namespace Unitech.Controllers
         
         public ActionResult Edit(int id)
         {
-            return View(_ongRep.BuscarporId(id));
+                return View(_ongRep.BuscarporId(id));
         }
 
         
@@ -71,8 +71,7 @@ namespace Unitech.Controllers
         
         public ActionResult Delete(int id)
         {
-
-            return View(_ongRep.BuscarporId(id));
+                return View(_ongRep.BuscarporId(id));   
         }
 
         

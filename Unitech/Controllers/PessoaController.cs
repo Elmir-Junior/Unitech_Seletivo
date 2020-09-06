@@ -16,11 +16,9 @@ namespace Unitech.Controllers
         PessoaRepository _pessoaRep = new PessoaRepository();
         OngRepository _ongRep = new OngRepository();
 
-        
-        
-
         public ActionResult Index()
         {
+
             return View(_pessoaRep.ListarPessoa());
         }
 

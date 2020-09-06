@@ -4,10 +4,9 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Detalhes</h1>
 
 <div>
-    <h4>Pessoa</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -38,5 +37,5 @@
 </div>
 <div>
     @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" data-ajax="true" data-ajax-mode="replace" data-ajax-update="#conteudo">Back to List</a>
 </div>

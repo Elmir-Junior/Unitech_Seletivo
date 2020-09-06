@@ -22,8 +22,8 @@
         </dd>
     </dl>
     
-    <form asp-action="Delete">
+    <form asp-action="Delete" data-ajax="true" data-ajax-mode="replace" data-ajax-update="#conteudo">
         <input type="submit" value="Apagar" class="btn btn-danger" />
-        <a asp-action="Index">Voltar </a>
+        <a asp-action="Index"  data-ajax="true" data-ajax-mode="replace" data-ajax-update="#conteudo">Voltar </a>
     </form>
 </div>

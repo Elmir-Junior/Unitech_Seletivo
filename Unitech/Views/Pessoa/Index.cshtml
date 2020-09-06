@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<Unitech.Models.Pessoa>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Pessoas";
 }
 
-<h1>Index</h1>
+<h1>Pessoas</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" data-ajax="true" data-ajax-mode="replace" data-ajax-update="#conteudo">Criar novo</a>
 </p>
 <table class="table">
     <thead>
