@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
+using K4os.Hash.xxHash;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -11,7 +13,7 @@ using Unitech.Models;
 
 namespace Unitech.Controllers
 {
-    public class PessoaController : Controller
+    public class PessoaController : BaseController
     {
         PessoaRepository _pessoaRep = new PessoaRepository();
         OngRepository _ongRep = new OngRepository();
@@ -31,9 +33,6 @@ namespace Unitech.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            //var ongint = _pessoaRep.ListarOngId();
-            //ViewBag.OngID = new SelectList(_pessoaRep.ListarOngId(), "Ong_Id", "Descricao");
-
             List<SelectListItem> lista = new List<SelectListItem>();
             lista.Add(new SelectListItem
             {
@@ -49,11 +48,6 @@ namespace Unitech.Controllers
                 });
             }
             ViewBag.Selecionador = lista;
-
-
-                //< select asp -for= "Ong_ID" asp - items = "@ViewBag.OngID" >
-  //            ViewBag.OngID = _pessoaRep.ListarOngId().Select(c => new SelectListItem { Text = c.Descricao, Value=""}).ToList();
-
             return View();
         }
 
@@ -110,6 +104,24 @@ namespace Unitech.Controllers
             {
                 return View();
             }
+        }
+
+        [HttpGet]
+        public IActionResult Pesquisa(string pesquisa)
+        {
+            //refatorar codigo
+            var ong = from m in _pessoaRep.ListarPessoa()
+                         select m;
+           // List<int> buscaid = new List<int>();
+            ong = ong.Where(s => s.Descricao.Contains(pesquisa));
+                //foreach (int i in ong.Select(s=> s.ID))
+                //{
+                //    buscaid = _ongRep.buscarid(i).ToList();
+                //    //por isso em formato visivel na view
+                //}
+               
+            
+            return View(ong.ToList());
         }
     }
 }

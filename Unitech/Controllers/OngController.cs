@@ -15,7 +15,11 @@ namespace Unitech.Controllers
 
         public ActionResult Index()
         {
-                return View(_ongRep.ListarOng());   
+            var item = _ongRep.ListarOng();
+            if (HTTPExtensions.IsAjaxRequest(Request))
+                return PartialView(item);
+            else
+                return View(item); 
         }
 
         

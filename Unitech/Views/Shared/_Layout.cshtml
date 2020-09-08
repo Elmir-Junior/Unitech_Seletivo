@@ -1,11 +1,14 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Unitech</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <!--<link rel="stylesheet" href="~/css/styles.css" />-->
+    
 </head>
 <body>
     <header>
@@ -19,16 +22,13 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" data-ajax="true" data-ajax-mode="replace" data-ajax-update="#conteudo"
->Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" data-ajax="true" data-ajax-mode="replace" data-ajax-update="#conteudo">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Ong" asp-action="Index" data-ajax="true" data-ajax-mode="replace" data-ajax-update="#conteudo"
->ONG'S</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Ong" asp-action="Index" data-ajax="true" data-ajax-mode="replace" data-ajax-update="#conteudo">ONG'S</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Pessoa" asp-action="Index"data-ajax="true" data-ajax-mode="replace" data-ajax-update="#conteudo"
->Pessoas</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Pessoa" asp-action="Index" data-ajax="true" data-ajax-mode="replace" data-ajax-update="#conteudo">Pessoas</a>
                         </li>
                     </ul>
                 </div>
@@ -38,19 +38,20 @@
     <div class="container">
         <main role="main" class="pb-3">
             <div id="conteudo">
-            @RenderBody()
+                @RenderBody()
             </div>
         </main>
     </div>
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2020 - Unitech - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2020 - Unitech
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <!-- <script src="~/js/scripts.js"></script>-->
     @RenderSection("Scripts", required: false)
 </body>
 </html>
