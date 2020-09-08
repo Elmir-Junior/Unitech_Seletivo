@@ -9,7 +9,7 @@
         <input type="submit" value="Filtrar" />
     </p>
 </form>
-<h1>Pessoas</h1>
+<h1>Pessoas Cadastradas</h1>
 
 <p>
     <a asp-action="Create" data-ajax="true" data-ajax-mode="replace" data-ajax-update="#conteudo">Criar novo</a>
@@ -49,9 +49,9 @@
                     @Html.DisplayFor(modelItem => item.Ong_ID)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    @Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Detalhes", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Apagar", "Delete", new { /* id=item.PrimaryKey */ })
                 </td>
             </tr>
         }

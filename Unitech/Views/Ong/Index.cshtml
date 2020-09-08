@@ -4,7 +4,14 @@
     ViewData["Title"] = "Index";
 }
 
-<h4>ONG</h4>
+<form asp-controller="Ong" asp-action="Pesquisa" method="get">
+    <p>
+        <input type="text" name="pesquisa">
+        <input type="submit" value="Filtrar" />
+    </p>
+</form>
+
+<h4>ONG'S Cadastradas</h4>
 
 <p>
     <a asp-action="Create"  data-ajax="true" data-ajax-mode="replace" data-ajax-update="#conteudo"> Criar ONG</a>
@@ -31,9 +38,9 @@
                 @Html.DisplayFor(modelItem => item.Descricao)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Detalhes", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Apagar", "Delete", new { /* id=item.PrimaryKey */ })
             </td>
         </tr>
 }

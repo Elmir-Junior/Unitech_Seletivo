@@ -36,15 +36,6 @@ namespace Unitech.Infra
                 return con.QueryFirstOrDefault<Ong>(query, new { ID = id});
             }
         }
-
-        public IEnumerable<int> buscarid(int id)
-        {
-            using (var con = mySQL.connection())
-            {
-                var query = "SELECT * from ong where ID=@Id";
-                return con.Query<int>(query, new { ID = id});
-            }
-        }
         public IEnumerable<Ong> ListarOng()
         {
             using (var con = mySQL.connection())

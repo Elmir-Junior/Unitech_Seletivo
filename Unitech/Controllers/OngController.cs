@@ -93,5 +93,14 @@ namespace Unitech.Controllers
                 return View();
             }
         }
+        public IActionResult Pesquisa(string pesquisa)
+        {
+
+            var ong = from m in _ongRep.ListarOng()
+                      select m;
+
+            ong = ong.Where(s => s.Descricao.Contains(pesquisa));
+            return View(ong.ToList());
+        }
     }
 }

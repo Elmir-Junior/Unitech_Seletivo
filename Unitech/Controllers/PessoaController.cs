@@ -109,19 +109,12 @@ namespace Unitech.Controllers
         [HttpGet]
         public IActionResult Pesquisa(string pesquisa)
         {
-            //refatorar codigo
-            var ong = from m in _pessoaRep.ListarPessoa()
+           
+            var pessoa = from m in _pessoaRep.ListarPessoa()
                          select m;
-           // List<int> buscaid = new List<int>();
-            ong = ong.Where(s => s.Descricao.Contains(pesquisa));
-                //foreach (int i in ong.Select(s=> s.ID))
-                //{
-                //    buscaid = _ongRep.buscarid(i).ToList();
-                //    //por isso em formato visivel na view
-                //}
-               
-            
-            return View(ong.ToList());
+           
+            pessoa = pessoa.Where(s => s.Descricao.Contains(pesquisa));
+            return View(pessoa.ToList());
         }
     }
 }

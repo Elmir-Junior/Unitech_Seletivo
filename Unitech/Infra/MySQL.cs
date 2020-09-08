@@ -16,18 +16,5 @@ namespace Unitech.Infra
             string con = "server=localhost;user id=user;pwd=1234567;database=unitech";
             return new MySqlConnection(con);
         }
-        
-
-        //MySqlCommand Query = new MySqlCommand();
-        //public void listar()
-        //{
-        //    Query.Connection = connect();
-        //    connect().Open();
-        //    Query.CommandText = "SELECT * FROM ONG";
-        //}
-        //public void Inserir()
-        //{
-
-        //}
     }
 }

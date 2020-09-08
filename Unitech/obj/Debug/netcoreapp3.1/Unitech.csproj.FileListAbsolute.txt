@@ -125,11 +125,6 @@ C:\Users\elmir\source\repos\Unitech\Unitech\obj\Debug\netcoreapp3.1\Razor\Views\
 C:\Users\elmir\source\repos\Unitech\Unitech\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\elmir\source\repos\Unitech\Unitech\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\elmir\source\repos\Unitech\Unitech\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
-C:\Users\elmir\source\repos\Unitech\Unitech\obj\Debug\netcoreapp3.1\Razor\Views\Teste\Create.cshtml.g.cs
-C:\Users\elmir\source\repos\Unitech\Unitech\obj\Debug\netcoreapp3.1\Razor\Views\Teste\Delete.cshtml.g.cs
-C:\Users\elmir\source\repos\Unitech\Unitech\obj\Debug\netcoreapp3.1\Razor\Views\Teste\Details.cshtml.g.cs
-C:\Users\elmir\source\repos\Unitech\Unitech\obj\Debug\netcoreapp3.1\Razor\Views\Teste\Edit.cshtml.g.cs
-C:\Users\elmir\source\repos\Unitech\Unitech\obj\Debug\netcoreapp3.1\Razor\Views\Teste\Index.cshtml.g.cs
 C:\Users\elmir\source\repos\Unitech\Unitech\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\elmir\source\repos\Unitech\Unitech\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\elmir\source\repos\Unitech\Unitech\obj\Debug\netcoreapp3.1\Unitech.RazorTargetAssemblyInfo.cache
@@ -141,3 +136,4 @@ C:\Users\elmir\source\repos\Unitech\Unitech\obj\Debug\netcoreapp3.1\staticwebass
 C:\Users\elmir\source\repos\Unitech\Unitech\obj\Debug\netcoreapp3.1\Unitech.dll
 C:\Users\elmir\source\repos\Unitech\Unitech\obj\Debug\netcoreapp3.1\Unitech.pdb
 C:\Users\elmir\source\repos\Unitech\Unitech\obj\Debug\netcoreapp3.1\Unitech.genruntimeconfig.cache
+C:\Users\elmir\source\repos\Unitech\Unitech\obj\Debug\netcoreapp3.1\Razor\Views\Ong\Pesquisa.cshtml.g.cs
