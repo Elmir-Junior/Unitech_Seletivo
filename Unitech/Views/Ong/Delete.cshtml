@@ -4,21 +4,7 @@
     ViewData["Title"] = "Delete";
 }
 <head>
-<script>
-        $.ajax({
-            type: 'POST',
-            url: @Url.Action("Delete", "Ong"),
-            data: $(form).serialize,
-            datatype: "json",
-            sucess: function(response){
-                $("#conteudo");
-            };
-            error: function(response){
-                $("#conteudo");
-            };
-        });
 
-</script>
 </head>
 <h3>Tem certeza que deseja excluir ?</h3>
 <div>
@@ -36,8 +22,19 @@
             @Html.DisplayFor(model => model.Descricao)
         </dd>
     </dl>
-    <form asp-action="Delete" >
-        <input type="submit" value="Apagar" class="btn btn-danger" id="#conteudo"/>
+    <form>
+        <input type="submit" value="Apagar" class="btn btn-danger" id="#envio"/>
         <a asp-action="Index">Voltar </a>
     </form>
 </div>
+@section Scripts {
+<script>
+    $("#envio").click(function(form){
+        $.ajax({
+            type: 'POST',
+            url: @Url.Action("Delete", "Ong"),
+            data: $(form).serialize,
+            datatype: "json",
+        })};
+</script>
+}

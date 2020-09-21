@@ -1,38 +1,19 @@
 ﻿@{
     ViewData["Title"] = "Create";
 }
-<head>
-    <script>
-        //function enviarform(form) 
-        $.ajax({
-                url: @url.action("Create", "Ong"),
-                type: "POST",
-                data: $(form).serialize(),
-                datatype: "json",
-                sucess: function(response){
-                    $('#envio').html(response);
-                }
-                error: function(response){
-                    $('#envio')(response);
-                }
-         })
-    }
-    </script>
-</head>
-
 
 <h1>Cadastrar ONG</h1>
 
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form>
             <div class="form-group">
                 <label asp-for="Descricao" class="control-label"></label>
                 <input asp-for="Descricao" class="form-control" />
                 <span asp-validation-for="Descricao" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" id="envio" name="envio"/>
+                <input type="submit" value="Create" class="btn btn-primary" id="envio"/>
             </div>
         </form>
     </div>
@@ -43,5 +24,15 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        $("#envio").click(function(form){
+                 $.ajax({
+                url: @url.action("Create", "Ong"),
+                type: "POST",
+                data: $(form).serialize(),
+                datatype: "json",
+                }
+            })
+        }
+    </script>
 }

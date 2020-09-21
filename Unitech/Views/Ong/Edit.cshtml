@@ -40,5 +40,15 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        $("#content").click(function(form){
+        $.ajax({
+            url: @Url.action("Edit", "Ong")
+            type: "POST",
+            data: $(form).serialize(),
+            datatype: "json",
+
+        })
+        }
+</script>
 }

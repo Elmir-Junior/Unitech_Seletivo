@@ -10,14 +10,14 @@
             contentType: "application/json",
             datatype: "json",
             sucess: function(response){
-                 $("#conteudo").html(response);
+                 $("#result").html(response);
                 /*$(response.d).each(function(collection)){
                     var htmlText = this.ID +" "+ this.Descricao;
                     $('#result').html(htmlText" <br/>");
                 }*/
             };
             error: function(response){
-                $("#conteudo").html(response);
+                $("#result").html(response);
             };
         });
     </script>
