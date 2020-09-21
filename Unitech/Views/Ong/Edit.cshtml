@@ -4,6 +4,20 @@
     ViewData["Title"] = "Edit";
 }
 
+<script>
+        $.ajax({
+            url: @Url.action("Edit", "Ong")
+            type: "POST",
+            data: $(form).serialize(),
+            datatype: "json",
+            sucess: function(response){
+                $("#content").html(response);
+            };
+            error: funtion(response){
+                $("#content").html(response);
+            };
+        })
+</script>
 <h1>Editar ONG</h1>
 
 <div class="row">
@@ -15,14 +29,14 @@
                 <span asp-validation-for="Descricao" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Salvar" class="btn btn-primary" />
+                <input type="submit" value="Salvar" class="btn btn-primary" id="content"/>
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index" data-ajax="true" data-ajax-mode="replace" data-ajax-update="#conteudo">Voltar</a>
+    <a asp-action="Index">Voltar</a>
 </div>
 
 @section Scripts {

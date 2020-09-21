@@ -3,8 +3,23 @@
 @{
     ViewData["Title"] = "Delete";
 }
+<head>
+<script>
+        $.ajax({
+            type: 'POST',
+            url: @Url.Action("Delete", "Ong"),
+            data: $(form).serialize,
+            datatype: "json",
+            sucess: function(response){
+                $("#conteudo");
+            };
+            error: function(response){
+                $("#conteudo");
+            };
+        });
 
-
+</script>
+</head>
 <h3>Tem certeza que deseja excluir ?</h3>
 <div>
     <dl class="row">
@@ -21,9 +36,8 @@
             @Html.DisplayFor(model => model.Descricao)
         </dd>
     </dl>
-    
-    <form asp-action="Delete" data-ajax="true" data-ajax-mode="replace" data-ajax-update="#conteudo">
-        <input type="submit" value="Apagar" class="btn btn-danger" />
-        <a asp-action="Index"  data-ajax="true" data-ajax-mode="replace" data-ajax-update="#conteudo">Voltar </a>
+    <form asp-action="Delete" >
+        <input type="submit" value="Apagar" class="btn btn-danger" id="#conteudo"/>
+        <a asp-action="Index">Voltar </a>
     </form>
 </div>

@@ -1,28 +1,45 @@
-﻿@model Unitech.Models.Ong
-
-@{
+﻿@{
     ViewData["Title"] = "Create";
 }
+<head>
+    <script>
+        //function enviarform(form) 
+        $.ajax({
+                url: @url.action("Create", "Ong"),
+                type: "POST",
+                data: $(form).serialize(),
+                datatype: "json",
+                sucess: function(response){
+                    $('#envio').html(response);
+                }
+                error: function(response){
+                    $('#envio')(response);
+                }
+         })
+    }
+    </script>
+</head>
+
 
 <h1>Cadastrar ONG</h1>
 
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create" data-ajax="true" data-ajax-mode="replace" data-ajax-update="#conteudo">
+        <form asp-action="Create">
             <div class="form-group">
                 <label asp-for="Descricao" class="control-label"></label>
                 <input asp-for="Descricao" class="form-control" />
                 <span asp-validation-for="Descricao" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary" id="envio" name="envio"/>
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index"  data-ajax="true" data-ajax-mode="replace" data-ajax-update="#conteudo">Voltar</a>
+    <a asp-action="Index">Voltar</a>
 </div>
 
 @section Scripts {

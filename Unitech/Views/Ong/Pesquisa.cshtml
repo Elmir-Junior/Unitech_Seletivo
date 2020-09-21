@@ -1,33 +1,29 @@
-﻿@model IEnumerable<Unitech.Models.Ong>
-
+﻿<head>
+    <script>
+        $.ajax(){
+            type: "GET",
+            datatype: "json",
+            url: @Url.Action("pesquisa", "Ong"),
+            data: $(form).serialize(),
+            sucess: function(response){
+                $("#content").html(response);
+                };
+            error: function(response){
+                $("#content").html(response);
+            };
+        };
+    </script>
+</head>
 <p>
     <a asp-action="Create">Cadastrar Nova ONG</a>
 </p>
 <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Descricao)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descricao)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        <div id="content">
+        </div>
+        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>
         </tr>
 }

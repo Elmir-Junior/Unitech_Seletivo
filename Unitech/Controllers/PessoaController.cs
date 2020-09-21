@@ -13,7 +13,7 @@ using Unitech.Models;
 
 namespace Unitech.Controllers
 {
-    public class PessoaController : BaseController
+    public class PessoaController : Controller
     {
         PessoaRepository _pessoaRep = new PessoaRepository();
         OngRepository _ongRep = new OngRepository();

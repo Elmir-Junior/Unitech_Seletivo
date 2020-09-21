@@ -1,48 +1,40 @@
-﻿@model IEnumerable<Unitech.Models.Ong>
-
-@{
+﻿@{
     ViewData["Title"] = "Index";
 }
-
+<head>
+    <script>
+        $.ajax({
+            type: "GET",
+            url: @Url.action("Index","Ong"),
+            data: {},
+            contentType: "application/json",
+            datatype: "json",
+            sucess: function(response){
+                 $("#conteudo").html(response);
+                /*$(response.d).each(function(collection)){
+                    var htmlText = this.ID +" "+ this.Descricao;
+                    $('#result').html(htmlText" <br/>");
+                }*/
+            };
+            error: function(response){
+                $("#conteudo").html(response);
+            };
+        });
+    </script>
+</head>
 <form asp-controller="Ong" asp-action="Pesquisa" method="get">
     <p>
         <input type="text" name="pesquisa">
-        <input type="submit" value="Filtrar" />
+        <input type="submit" value="Filtrar" id="#conteudo"/>
     </p>
 </form>
 
 <h4>ONG'S Cadastradas</h4>
 
 <p>
-    <a asp-action="Create"  data-ajax="true" data-ajax-mode="replace" data-ajax-update="#conteudo"> Criar ONG</a>
+    <a asp-action="Create"> Criar ONG</a>
 </p>
 <table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Descricao)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descricao)
-            </td>
-            <td>
-                @Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Detalhes", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Apagar", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-}
-    </tbody>
+    <div id="result">
+     </div>
 </table>

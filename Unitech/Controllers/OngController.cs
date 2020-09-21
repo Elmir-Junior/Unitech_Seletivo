@@ -9,17 +9,13 @@ using Unitech.Models;
 
 namespace Unitech.Controllers
 {
-    public class OngController : BaseController
+    public class OngController : Controller
     {
         OngRepository _ongRep = new OngRepository();
 
         public ActionResult Index()
         {
-            var item = _ongRep.ListarOng();
-            if (HTTPExtensions.IsAjaxRequest(Request))
-                return PartialView(item);
-            else
-                return View(item); 
+            return View(); 
         }
 
         

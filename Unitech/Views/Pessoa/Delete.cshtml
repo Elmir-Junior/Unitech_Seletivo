@@ -3,7 +3,18 @@
 @{
     ViewData["Title"] = "Delete";
 }
-
+<head>
+    <script>
+        $.ajax(){
+            type: "POST",
+            typedata: "json",
+            data: $(form).serialize,
+            sucess: function(response){
+                $("#content").html(response);
+            };
+        }
+    </script>
+</head>
 <h1>Apagar</h1>
 
 <h3>Tem certeza que deseja apagar isso ?</h3>
@@ -37,8 +48,8 @@
         </dd>
     </dl>
     
-    <form asp-action="Delete" data-ajax="true" data-ajax-mode="replace" data-ajax-update="#conteudo">
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index" data-ajax="true" data-ajax-mode="replace" data-ajax-update="#conteudo">Back to List</a>
+    <form asp-action="Delete">
+        <input type="submit" value="Delete" class="btn btn-danger" id="#content"/> 
+        <a asp-action="Index">Back to List</a>
     </form>
 </div>

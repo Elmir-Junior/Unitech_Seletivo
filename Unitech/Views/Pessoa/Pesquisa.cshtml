@@ -3,39 +3,29 @@
 <p>
     <a asp-action="Create">Cadastrar nova ONG</a>
 </p>
+
+<head>
+    <script>
+        $.ajax(){
+            type: "GET",
+            datatype: "json",
+            url: @Url.Action("pesquisa", "Ong"),
+            data: $(form).serialize(),
+            sucess: function(response){
+                $("#content").html(response);
+                };
+            error: function(response){
+                $("#content").html(response);
+            };
+        };
+    </script>
+</head>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Descricao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Telefone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ong_ID)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descricao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Telefone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ong_ID)
-            </td>
+<div id="#content">
+
+</div>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
