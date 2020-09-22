@@ -34,8 +34,23 @@
             @Html.DisplayFor(model => model.Ong_ID)
         </dd>
     </dl>
+    <div>
+        <input type="submit" id="content"/>
+    </div>
 </div>
 <div>
     @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index" data-ajax="true" data-ajax-mode="replace" data-ajax-update="#conteudo">Back to List</a>
+    <a asp-action="Index">Back to List</a>
 </div>
+
+@section Scripts 
+{ 
+<script>
+    $("content").click(function () {
+        $.post("@Url.Action("Ong", "Edit" )", function () {
+            console.log("Editado")
+        }),
+                
+    })
+</script>
+}

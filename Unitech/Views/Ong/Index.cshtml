@@ -12,30 +12,35 @@
 </form>
 
 <h4>ONG'S Cadastradas</h4>
-
 <p>
     <a asp-action="Create"> Criar ONG</a>
 </p>
-<table class="table">
-    <div id="result">
-    </div>
+<table id="result">
+
 </table>
 
-@section Scripts { 
-<script>
-        $.ajax({
-            type: "GET",
-            url: @Url.Action("Index","Ong"),
-            datatype: "json",
-            sucess: function (response) {
-                (response.d).each(function ()){
-                    var htmlText = this.ID + " " + this.Descricao;
-                    $('#result').html(htmlText" <br/>"),
+@section Scripts {
+    <script>
+        elmir();
+        var dados = {
+            var nome = $("#Nome").val();
+            var endereco = $("#Endereco").val();
+        }
+        
+        function elmir() {
+            $.ajax({
+                url: "@Url.Action("Listar","Ong")",
+                type: "get",
+                data: dados,
+                dataType: "json",
+                success: function (data) {
+                    console.log(data.data)
                 }
-            },
-            error: function(response){
-                $("#result").html(response);
-            },
-        });
-</script>
+            });
+            @*$.get("@Url.Action("Listar", "Ong")", null ,function (data) {
+                $("#result").append("<p>" + data.data + "</p>");
+            });*@
+        };
+    
+    </script>
 }

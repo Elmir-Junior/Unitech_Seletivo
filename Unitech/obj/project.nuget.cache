@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8Je1lHf4hEEfWahwotsVF1xt4laN274QFOVmKMDt4YPwi7J+Dmaw2TKgtlcEb/qt4X8EB6qYsnO29K7HLFyviw==",
+  "dgSpecHash": "8yXGizm34Ai4m5M8k42ZLXkJk8fh2qBA7E4MonlWZDAsRtx/mKC2Z7SBbTJHmLcmVSwSGs6vlJl0xs8gSWGVLw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Usuario\\Documents\\Unitech_Seletivo\\Unitech_Seletivo\\Unitech\\Unitech.csproj",
   "expectedPackageFiles": [
@@ -38,6 +38,7 @@
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.win32.systemevents\\4.6.0\\microsoft.win32.systemevents.4.6.0.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\mysql.data\\8.0.21\\mysql.data.8.0.21.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\mysqlconnector\\1.0.1\\mysqlconnector.1.0.1.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\nuget.frameworks\\4.7.0\\nuget.frameworks.4.7.0.nupkg.sha512",

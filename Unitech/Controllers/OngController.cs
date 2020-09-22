@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -13,31 +14,43 @@ namespace Unitech.Controllers
     {
         OngRepository _ongRep = new OngRepository();
 
+        public ActionResult Listar()
+        {
+
+            JsonResult result = new JsonResult(_ongRep.ListarOng());
+            DataTable data = new DataTable();
+
+
+            return Ok(new
+            {
+                data = _ongRep.ListarOng()
+            });
+        }
         public ActionResult Index()
         {
-            return View(); 
+            return View(_ongRep.ListarOng());
         }
 
-        
+
         public ActionResult Details(int id)
         {
-                return View(_ongRep.BuscarporId(id));
+            return View(_ongRep.BuscarporId(id));
         }
 
-        
+
         public ActionResult Create()
         {
-                return View();
+            return View();
         }
 
-        
+
         [HttpPost]
         public ActionResult Create(Ong collection)
         {
             try
             {
                 _ongRep.Adicionar(collection);
-                return RedirectToAction(nameof(Index));
+                return new JsonResult(nameof(Index));
             }
             catch
             {
@@ -45,13 +58,13 @@ namespace Unitech.Controllers
             }
         }
 
-        
+
         public ActionResult Edit(int id)
         {
-                return View(_ongRep.BuscarporId(id));
+            return View(_ongRep.BuscarporId(id));
         }
 
-        
+
         [HttpPost]
         public ActionResult Edit(int id, Ong collection)
         {
@@ -66,13 +79,13 @@ namespace Unitech.Controllers
             }
         }
 
-        
+
         public ActionResult Delete(int id)
         {
-                return View(_ongRep.BuscarporId(id));   
+            return View(_ongRep.BuscarporId(id));
         }
 
-        
+
         [HttpPost]
         public ActionResult Delete(int id, IFormCollection collection)
         {

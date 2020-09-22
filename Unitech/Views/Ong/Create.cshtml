@@ -8,9 +8,11 @@
     <div class="col-md-4">
         <form>
             <div class="form-group">
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" id="envio"/>
+                <div>ID: <input type="text" id="Ide" value=""/></div>
+                <div> Descricao: <input type="text" id="descricao" value=""/></div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" id="envio" name="data"/>
+                </div>
             </div>
         </form>
     </div>
@@ -21,14 +23,23 @@
 </div>
 
 @section Scripts {
-    <script>
-        $("#envio").click(function(form){
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    
+    <script >
+        $("#envio").click(function () {
             $.ajax({
-                url: @Url.Action("Create", "Ong"),
                 type: "POST",
-                data: $(form).serialize(),
-                datatype: "json",
+                url: "@Url.Action("Create", "Ong")",
+                //data:
+                success: function (response) {
+                    alert("Tudo certo" + response);
+                },
+                error: function (response) {
+                    alert("Tudo errado" + response);
+                },
             });
-          });
+        });
     </script>
+
 }

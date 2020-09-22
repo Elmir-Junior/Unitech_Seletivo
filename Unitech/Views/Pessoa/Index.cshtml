@@ -5,15 +5,14 @@
 }
 <head>
     <script>
-        $.ajax(){
+        $.ajax({
             type: "GET",
             URL: @Url.Action("Index", "pessoa"),
-            typedata: "json",
             data: $(form).serialize,
-            sucess: function(response){
-                $("#content").html(response);
-            };
-        }
+            sucess: function (response) {
+                $("#content").html(response.data);
+            },
+        });
     </script>
 </head>
 
@@ -28,17 +27,13 @@
 <p>
     <a asp-action="Create">Criar novo</a>
 </p>
-<table class="table">
-    <thead>
-        <div id="content">
 
-        </div>
-                <td>
-                    @Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Detalhes", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Apagar", "Delete", new { /* id=item.PrimaryKey */ })
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+<div id="content">
+
+</div>
+
+<td>
+    @Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */ }) |
+    @Html.ActionLink("Detalhes", "Details", new { /* id=item.PrimaryKey */ }) |
+    @Html.ActionLink("Apagar", "Delete", new { /* id=item.PrimaryKey */ })
+</td>

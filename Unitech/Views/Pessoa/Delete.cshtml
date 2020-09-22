@@ -50,8 +50,9 @@
             $.ajax({
                 type: "POST",
                 url: @Url.Action("Delete", "Pessoa"),
+                //data
                 typedata: "json",
-                data: $(form).serialize
+                data: $(form).serialize,
                 }
             });
         }
