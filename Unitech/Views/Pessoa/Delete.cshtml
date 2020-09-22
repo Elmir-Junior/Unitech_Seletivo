@@ -4,16 +4,7 @@
     ViewData["Title"] = "Delete";
 }
 <head>
-    <script>
-        $.ajax(){
-            type: "POST",
-            typedata: "json",
-            data: $(form).serialize,
-            sucess: function(response){
-                $("#content").html(response);
-            };
-        }
-    </script>
+
 </head>
 <h1>Apagar</h1>
 
@@ -22,34 +13,47 @@
     <h4>Pessoa</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.ID)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.ID)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Descricao)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Descricao)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Telefone)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Telefone)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Ong_ID)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Ong_ID)
         </dd>
     </dl>
-    
+
     <form asp-action="Delete">
-        <input type="submit" value="Delete" class="btn btn-danger" id="#content"/> 
+        <input type="submit" value="Delete" class="btn btn-danger" id="content" />
         <a asp-action="Index">Back to List</a>
     </form>
 </div>
+@section script{
+    <script>
+        $.("#content").click(function (form) {
+            $.ajax({
+                type: "POST",
+                url: @Url.Action("Delete", "Pessoa"),
+                typedata: "json",
+                data: $(form).serialize
+                }
+            });
+        }
+    </script>
+}

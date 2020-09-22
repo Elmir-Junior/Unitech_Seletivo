@@ -53,7 +53,6 @@ namespace Unitech.Controllers
 
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Create(Pessoa collection)
         {
 

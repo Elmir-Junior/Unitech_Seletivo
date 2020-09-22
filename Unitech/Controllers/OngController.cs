@@ -32,7 +32,6 @@ namespace Unitech.Controllers
 
         
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Create(Ong collection)
         {
             try
@@ -54,7 +53,6 @@ namespace Unitech.Controllers
 
         
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, Ong collection)
         {
             try
@@ -76,7 +74,6 @@ namespace Unitech.Controllers
 
         
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)
         {
             try

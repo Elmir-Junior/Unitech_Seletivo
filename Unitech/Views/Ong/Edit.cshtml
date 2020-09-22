@@ -4,25 +4,11 @@
     ViewData["Title"] = "Edit";
 }
 
-<script>
-        $.ajax({
-            url: @Url.action("Edit", "Ong")
-            type: "POST",
-            data: $(form).serialize(),
-            datatype: "json",
-            sucess: function(response){
-                $("#content").html(response);
-            };
-            error: funtion(response){
-                $("#content").html(response);
-            };
-        })
-</script>
 <h1>Editar ONG</h1>
 
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form>
             <div class="form-group">
                 <label asp-for="Descricao" class="control-label"></label>
                 <input asp-for="Descricao" class="form-control" />
@@ -42,13 +28,15 @@
 @section Scripts {
     <script>
         $("#content").click(function(form){
-        $.ajax({
-            url: @Url.action("Edit", "Ong")
-            type: "POST",
-            data: $(form).serialize(),
-            datatype: "json",
-
-        })
+            $.ajax({
+                url: @Url.Action("Edit", "Ong"),
+                type: "PUT",
+                data: $(form).serialize(),
+                datatype: "json",
+                sucess: function (response) {
+                    $("#content").html(response);
+                };
+            });
         }
 </script>
 }

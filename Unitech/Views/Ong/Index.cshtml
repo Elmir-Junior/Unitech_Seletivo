@@ -2,30 +2,12 @@
     ViewData["Title"] = "Index";
 }
 <head>
-    <script>
-        $.ajax({
-            type: "GET",
-            url: @Url.action("Index","Ong"),
-            data: {},
-            contentType: "application/json",
-            datatype: "json",
-            sucess: function(response){
-                 $("#result").html(response);
-                /*$(response.d).each(function(collection)){
-                    var htmlText = this.ID +" "+ this.Descricao;
-                    $('#result').html(htmlText" <br/>");
-                }*/
-            };
-            error: function(response){
-                $("#result").html(response);
-            };
-        });
-    </script>
+
 </head>
 <form asp-controller="Ong" asp-action="Pesquisa" method="get">
     <p>
         <input type="text" name="pesquisa">
-        <input type="submit" value="Filtrar" id="#conteudo"/>
+        <input type="submit" value="Filtrar" id="#conteudo" />
     </p>
 </form>
 
@@ -36,5 +18,24 @@
 </p>
 <table class="table">
     <div id="result">
-     </div>
+    </div>
 </table>
+
+@section Scripts { 
+<script>
+        $.ajax({
+            type: "GET",
+            url: @Url.Action("Index","Ong"),
+            datatype: "json",
+            sucess: function (response) {
+                (response.d).each(function ()){
+                    var htmlText = this.ID + " " + this.Descricao;
+                    $('#result').html(htmlText" <br/>"),
+                }
+            },
+            error: function(response){
+                $("#result").html(response);
+            },
+        });
+</script>
+}
